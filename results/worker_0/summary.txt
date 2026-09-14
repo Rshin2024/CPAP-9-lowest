@@ -1,0 +1,55 @@
+worker=0 branch=main host=cursor cores=4 updated=2026-09-14T15:19:00Z elapsed_s=114836
+plan: GEN=9 P=101 KX=10000000 MAXUNC=145 BASEUNC=144 VAR=100 ITERS=2000000 GNUM=96 EXCL= T=9 CODE=0c6db06222657eaf9ed3d0acbf77baa00cb03e8b
+logs/gen1_proc0.log: STAT cfgs=4940 k=987999995060 surv=271699255 prp1=41708533 prp2=6401142 prp3=982894 prp4=150521 prp5=23223 prp6=3713 prp7=578 prp8=92 prp9=10 nearmiss=10 hits=0 elapsed=7708s rate=1.28e+08 k/s
+logs/gen1_proc1.log: STAT cfgs=4920 k=983999995080 surv=270616517 prp1=41547399 prp2=6380805 prp3=979071 prp4=150553 prp5=23040 prp6=3578 prp7=564 prp8=107 prp9=6 nearmiss=6 hits=0 elapsed=7689s rate=1.28e+08 k/s
+logs/gen1_proc2.log: STAT cfgs=4940 k=987999995060 surv=271714016 prp1=41700059 prp2=6400720 prp3=980557 prp4=150805 prp5=23392 prp6=3767 prp7=617 prp8=97 prp9=9 nearmiss=9 hits=0 elapsed=7707s rate=1.28e+08 k/s
+logs/gen1_proc3.log: STAT cfgs=4940 k=987999995060 surv=271731163 prp1=41720947 prp2=6407411 prp3=982584 prp4=150499 prp5=23238 prp6=3714 prp7=594 prp8=114 prp9=6 nearmiss=6 hits=0 elapsed=7705s rate=1.28e+08 k/s
+logs/gen3_proc0.log: STAT cfgs=23680 vars=23396 reps=1325 k=236799976320 surv=65137874 prp1=10184809 prp2=1592248 prp3=248833 prp4=38918 prp5=6095 prp6=980 prp7=143 prp8=21 prp9=4 nearmiss=4 hits=0 elapsed=1808s rate=1.31e+08 k/s
+logs/gen3_proc1.log: STAT cfgs=23600 vars=23324 reps=1305 k=235999976400 surv=64890940 prp1=10057887 prp2=1558477 prp3=241294 prp4=37132 prp5=5768 prp6=899 prp7=153 prp8=19 prp9=2 nearmiss=2 hits=0 elapsed=1809s rate=1.3e+08 k/s
+logs/gen3_proc2.log: STAT cfgs=23720 vars=23441 reps=1527 k=237199976280 surv=65241052 prp1=10073177 prp2=1554864 prp3=240195 prp4=36943 prp5=5722 prp6=876 prp7=134 prp8=25 prp9=4 nearmiss=4 hits=0 elapsed=1808s rate=1.31e+08 k/s
+logs/gen3_proc3.log: STAT cfgs=23480 vars=23210 reps=1225 k=234799976520 surv=64566557 prp1=9954391 prp2=1534591 prp3=236660 prp4=36624 prp5=5655 prp6=846 prp7=130 prp8=24 prp9=1 nearmiss=1 hits=0 elapsed=1808s rate=1.3e+08 k/s
+logs/gen4_proc0.log: STAT cfgs=2460 vars=2431 reps=31 k=24599997540 surv=5506969 prp1=962774 prp2=169002 prp3=29535 prp4=5219 prp5=923 prp6=152 prp7=33 prp8=6 prp9=0 nearmiss=0 hits=0 elapsed=168s rate=1.46e+08 k/s
+logs/gen4_proc1.log: STAT cfgs=2440 vars=2410 reps=101 k=24399997560 surv=5458843 prp1=943077 prp2=163215 prp3=28068 prp4=4777 prp5=822 prp6=149 prp7=23 prp8=8 prp9=2 nearmiss=2 hits=0 elapsed=167s rate=1.46e+08 k/s
+logs/gen4_proc2.log: STAT cfgs=2440 vars=2408 reps=0 k=24399997560 surv=5461441 prp1=940661 prp2=161581 prp3=27809 prp4=4815 prp5=866 prp6=134 prp7=21 prp8=7 prp9=0 nearmiss=0 hits=0 elapsed=168s rate=1.45e+08 k/s
+logs/gen4_proc3.log: STAT cfgs=2440 vars=2410 reps=1 k=24399997560 surv=5458720 prp1=938954 prp2=161495 prp3=27958 prp4=4844 prp5=838 prp6=136 prp7=19 prp8=3 prp9=1 nearmiss=1 hits=0 elapsed=168s rate=1.45e+08 k/s
+logs/gen5_proc0.log: STAT cfgs=404080 vars=0 reps=0 k=4040799595920 surv=904276777 prp1=157171143 prp2=27313663 prp3=4750776 prp4=826023 prp5=143750 prp6=24803 prp7=4359 prp8=785 prp9=156 nearmiss=156 hits=0 elapsed=27029s rate=1.49e+08 k/s
+logs/gen5_proc1.log: STAT cfgs=404120 vars=0 reps=0 k=4041199595880 surv=904381160 prp1=157210160 prp2=27336295 prp3=4752830 prp4=825443 prp5=143666 prp6=24840 prp7=4246 prp8=766 prp9=158 nearmiss=158 hits=0 elapsed=27029s rate=1.5e+08 k/s
+logs/gen5_proc2.log: STAT cfgs=403920 vars=0 reps=0 k=4039199596080 surv=903892538 prp1=157107290 prp2=27312216 prp3=4746146 prp4=825210 prp5=142940 prp6=24918 prp7=4246 prp8=783 prp9=137 nearmiss=137 hits=0 elapsed=27030s rate=1.49e+08 k/s
+logs/gen5_proc3.log: STAT cfgs=403800 vars=0 reps=0 k=4037999596200 surv=903659933 prp1=157083505 prp2=27309260 prp3=4747964 prp4=823556 prp5=143475 prp6=24878 prp7=4289 prp8=745 prp9=101 nearmiss=101 hits=0 elapsed=27029s rate=1.49e+08 k/s
+logs/gen6_proc0.log: STAT cfgs=47120 vars=0 reps=0 k=471199952880 surv=97994431 prp1=17820382 prp2=3240143 prp3=589811 prp4=106919 prp5=19746 prp6=3515 prp7=646 prp8=120 prp9=19 nearmiss=19 hits=0 elapsed=3137s rate=1.5e+08 k/s
+logs/gen6_proc1.log: STAT cfgs=47160 vars=0 reps=0 k=471599952840 surv=98057358 prp1=17836875 prp2=3247797 prp3=589734 prp4=106889 prp5=19398 prp6=3574 prp7=625 prp8=103 prp9=25 nearmiss=25 hits=0 elapsed=3137s rate=1.5e+08 k/s
+logs/gen6_proc2.log: STAT cfgs=47120 vars=0 reps=0 k=471199952880 surv=97983716 prp1=17822791 prp2=3242427 prp3=588983 prp4=107536 prp5=19439 prp6=3535 prp7=647 prp8=138 prp9=23 nearmiss=23 hits=0 elapsed=3138s rate=1.5e+08 k/s
+logs/gen6_proc3.log: STAT cfgs=47120 vars=0 reps=0 k=471199952880 surv=97973729 prp1=17822561 prp2=3242782 prp3=588971 prp4=107306 prp5=19573 prp6=3530 prp7=630 prp8=100 prp9=21 nearmiss=21 hits=0 elapsed=3137s rate=1.5e+08 k/s
+logs/gen7_proc0.log: STAT cfgs=160400 vars=0 reps=0 k=1603999839600 surv=306965451 prp1=58070659 prp2=10985213 prp3=2078194 prp4=393594 prp5=74127 prp6=14278 prp7=2736 prp8=478 prp9=88 nearmiss=88 hits=0 elapsed=11111s rate=1.44e+08 k/s
+logs/gen7_proc1.log: STAT cfgs=160460 vars=0 reps=0 k=1604599839540 surv=307100427 prp1=58111802 prp2=10995768 prp3=2081988 prp4=394573 prp5=74716 prp6=14385 prp7=2701 prp8=544 prp9=95 nearmiss=95 hits=0 elapsed=11110s rate=1.44e+08 k/s
+logs/gen7_proc2.log: STAT cfgs=160440 vars=0 reps=0 k=1604399839560 surv=307056424 prp1=58107743 prp2=10995652 prp3=2082253 prp4=394379 prp5=74689 prp6=14125 prp7=2677 prp8=515 prp9=104 nearmiss=104 hits=0 elapsed=11111s rate=1.44e+08 k/s
+logs/gen7_proc3.log: STAT cfgs=160420 vars=0 reps=0 k=1604199839580 surv=306998236 prp1=58088277 prp2=10996167 prp3=2082735 prp4=394482 prp5=74465 prp6=14150 prp7=2674 prp8=490 prp9=85 nearmiss=85 hits=0 elapsed=11111s rate=1.44e+08 k/s
+logs/gen8_proc0.log: STAT cfgs=135300 vars=0 reps=0 k=1352999864700 surv=217569842 prp1=44732720 prp2=9199262 prp3=1891442 prp4=389108 prp5=79629 prp6=16356 prp7=3448 prp8=737 prp9=139 nearmiss=139 hits=0 elapsed=9304s rate=1.45e+08 k/s
+logs/gen8_proc1.log: STAT cfgs=135600 vars=0 reps=0 k=1355999864400 surv=218034707 prp1=44835564 prp2=9221778 prp3=1897612 prp4=390693 prp5=80239 prp6=16488 prp7=3425 prp8=681 prp9=132 nearmiss=132 hits=0 elapsed=9303s rate=1.46e+08 k/s
+logs/gen8_proc2.log: STAT cfgs=135460 vars=0 reps=0 k=1354599864540 surv=217816549 prp1=44781153 prp2=9206699 prp3=1893875 prp4=389645 prp5=80091 prp6=16421 prp7=3400 prp8=686 prp9=149 nearmiss=149 hits=0 elapsed=9304s rate=1.46e+08 k/s
+logs/gen8_proc3.log: STAT cfgs=135360 vars=0 reps=0 k=1353599864640 surv=217669269 prp1=44746577 prp2=9195952 prp3=1892324 prp4=389060 prp5=79598 prp6=16459 prp7=3452 prp8=732 prp9=130 nearmiss=130 hits=0 elapsed=9304s rate=1.45e+08 k/s
+logs/gen9_proc0.log: STAT cfgs=183780 vars=0 reps=0 k=1837799816220 surv=269715107 prp1=57837641 prp2=12402360 prp3=2658981 prp4=570235 prp5=122995 prp6=26168 prp7=5565 prp8=1184 prp9=250 nearmiss=250 hits=0 elapsed=11962s rate=1.54e+08 k/s
+logs/gen9_proc1.log: STAT cfgs=183800 vars=0 reps=0 k=1837999816200 surv=269763724 prp1=57850459 prp2=12405177 prp3=2659522 prp4=570714 prp5=122764 prp6=26162 prp7=5536 prp8=1204 prp9=296 nearmiss=296 hits=0 elapsed=11962s rate=1.54e+08 k/s
+logs/gen9_proc2.log: STAT cfgs=183660 vars=0 reps=0 k=1836599816340 surv=269523953 prp1=57800286 prp2=12399575 prp3=2660082 prp4=570777 prp5=122539 prp6=26038 prp7=5621 prp8=1170 prp9=231 nearmiss=231 hits=0 elapsed=11962s rate=1.54e+08 k/s
+logs/gen9_proc3.log: STAT cfgs=183880 vars=0 reps=0 k=1838799816120 surv=269838873 prp1=57853448 prp2=12408082 prp3=2662022 prp4=571154 prp5=122120 prp6=26288 prp7=5730 prp8=1227 prp9=267 nearmiss=267 hits=0 elapsed=11963s rate=1.54e+08 k/s
+hits: 0
+NEARMISS k=11601178 prime intermediate at j=270  bases layer=1 idx=1040547 base#827 swaps=2 unc=144 r=11 k=[10000000,19999999)
+NEARMISS k=13660467 prime intermediate at j=62  bases layer=1 idx=1274691 base#1218 swaps=2 unc=144 r=149 k=[10000000,19999999)
+NEARMISS k=19314680 prime intermediate at j=572  bases layer=1 idx=1472451 base#1558 swaps=2 unc=144 r=179 k=[10000000,19999999)
+NEARMISS k=14828553 prime intermediate at j=74  bases layer=1 idx=1485699 base#1577 swaps=2 unc=144 r=179 k=[10000000,19999999)
+NEARMISS k=11193985 prime intermediate at j=262  bases layer=1 idx=1550691 base#1675 swaps=1 unc=144 r=19 k=[10000000,19999999)
+NEARMISS k=17389341 prime intermediate at j=176  bases layer=1 idx=1636227 base#1796 swaps=2 unc=144 r=191 k=[10000000,19999999)
+NEARMISS k=11316905 prime intermediate at j=650  bases layer=1 idx=1645059 base#1809 swaps=2 unc=144 r=191 k=[10000000,19999999)
+NEARMISS k=15360533 prime intermediate at j=78  bases layer=1 idx=1671267 base#1844 swaps=2 unc=144 r=191 k=[10000000,19999999)
+NEARMISS k=18941744 prime intermediate at j=148  bases layer=1 idx=1732323 base#1922 swaps=2 unc=144 r=199 k=[10000000,19999999)
+NEARMISS k=14459835 prime intermediate at j=216  bases layer=1 idx=1854147 base#2104 swaps=2 unc=144 r=37 k=[10000000,19999999)
+NEARMISS k=19354779 prime intermediate at j=242  bases layer=1 idx=1881699 base#2154 swaps=2 unc=144 r=41 k=[10000000,19999999)
+NEARMISS k=17639631 prime intermediate at j=308  bases layer=1 idx=2013219 base#2381 swaps=2 unc=144 r=59 k=[10000000,19999999)
+NEARMISS k=16518617 prime intermediate at j=148  bases layer=1 idx=2071299 base#2478 swaps=2 unc=144 r=61 k=[10000000,19999999)
+NEARMISS k=10822158 prime intermediate at j=150  bases layer=1 idx=2127267 base#2571 swaps=2 unc=144 r=79 k=[10000000,19999999)
+NEARMISS k=17536965 prime intermediate at j=312  bases layer=1 idx=2141571 base#2601 swaps=2 unc=144 r=79 k=[10000000,19999999)
+NEARMISS k=11048510 prime intermediate at j=188  bases layer=1 idx=2221923 base#2730 swaps=2 unc=144 r=89 k=[10000000,19999999)
+NEARMISS k=14456698 prime intermediate at j=62  bases layer=1 idx=2342979 base#3180 swaps=2 unc=144 r=137 k=[10000000,19999999)
+NEARMISS k=17961348 prime intermediate at j=6  bases layer=1 idx=2392899 base#3327 swaps=2 unc=144 r=157 k=[10000000,19999999)
+NEARMISS k=15680092 prime intermediate at j=22  bases layer=1 idx=2397987 base#3335 swaps=2 unc=144 r=157 k=[10000000,19999999)
+NEARMISS k=12214747 prime intermediate at j=494  bases layer=1 idx=2512419 base#3676 swaps=2 unc=144 r=23 k=[10000000,19999999)
