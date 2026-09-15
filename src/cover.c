@@ -22,9 +22,19 @@
 #include <math.h>
 #include <stdint.h>
 #include <time.h>
+#include <errno.h>
+#include <limits.h>
 
 #define MAXP 64
 #define NPOS 1681
+
+static uint64_t number(const char *s, uint64_t maximum) {
+    char *end; errno = 0;
+    if (!s[0] || s[0] < '0' || s[0] > '9') { fprintf(stderr, "expected a nonnegative integer\n"); exit(1); }
+    unsigned long long n = strtoull(s, &end, 10);
+    if (errno || *end || n > maximum) { fprintf(stderr, "integer argument out of range\n"); exit(1); }
+    return (uint64_t)n;
+}
 
 static int primes[MAXP], np;
 static int hard[NPOS], nhard;       /* hard offsets j */
@@ -91,18 +101,20 @@ static int eval_full(void) {
 
 int main(int argc, char **argv) {
     if (argc < 2) { fprintf(stderr, "usage: cover P [iters] [restarts] [seed] [slack] [exclude...]\n"); return 1; }
-    int P = atoi(argv[1]);
-    long iters = argc > 2 ? atol(argv[2]) : 2000000;
-    int restarts = argc > 3 ? atoi(argv[3]) : 20;
-    uint64_t seed = argc > 4 ? strtoull(argv[4], 0, 10) : (uint64_t)time(NULL);
-    int slack = argc > 5 ? atoi(argv[5]) : 0;
+    int P = (int)number(argv[1], 511);
+    long iters = argc > 2 ? (long)number(argv[2], LONG_MAX) : 2000000;
+    int restarts = argc > 3 ? (int)number(argv[3], INT_MAX) : 20;
+    uint64_t seed = argc > 4 ? number(argv[4], UINT64_MAX) : (uint64_t)time(NULL);
+    int slack = argc > 5 ? (int)number(argv[5], NPOS) : 0;
+    if (P < 11 || !iters) { fprintf(stderr, "require 11 <= P <= 511 and positive iters\n"); return 1; }
     int excl[64], nexcl = 0;
-    for (int a = 6; a < argc; a++) excl[nexcl++] = atoi(argv[a]);
+    for (int a = 6; a < argc; a++) { if (nexcl >= MAXP) { fprintf(stderr, "too many excluded primes\n"); return 1; } excl[nexcl++] = (int)number(argv[a], 511); }
     np = 0;
     for (int p = 11; p <= P; p++) if (isprime_small(p)) {
         int ex = 0; for (int e = 0; e < nexcl; e++) if (excl[e] == p) ex = 1;
-        if (!ex) primes[np++] = p;
+        if (!ex) { if (np >= MAXP) { fprintf(stderr, "too many modulus primes (maximum 64)\n"); return 1; } primes[np++] = p; }
     }
+    if (!np) { fprintf(stderr, "at least one modulus prime is required\n"); return 1; }
     rng_s[0] = seed * 0x9E3779B97F4A7C15ULL + 1; rng_s[1] = seed ^ 0xD1B54A32D192ED03ULL;
     for (int i = 0; i < 10; i++) rnd();
 
