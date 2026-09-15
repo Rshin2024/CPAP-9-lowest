@@ -1,6 +1,6 @@
 # Results
 
-Previous record (Rosenthal & Andersen 2004): 3416716311814 * 179#/(149*157) + x65 + 210n, **79 digits**.
+Historical benchmark (Rosenthal & Andersen 2004): 3416716311814 * 179#/(149*157) + x65 + 210n, **79 digits**.
 
 ## Smallest found: 48 digits (new smallest known CPAP-9)
 
@@ -205,4 +205,3 @@ Verification (scripts/verify.py):
       target 8: BPSW/MR=prime PARI-isprime=proved
       all 1672 intermediate numbers are composite
       digits=64  N mod 210 = 109
-

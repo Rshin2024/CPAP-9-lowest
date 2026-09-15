@@ -1,18 +1,40 @@
 #!/usr/bin/env bash
-# Install dependencies and build the search binaries.
+# Install dependencies, build, and reproduce the 48-digit result.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-if [ ! -f /usr/include/x86_64-linux-gnu/gmp.h ] && [ ! -f /usr/include/gmp.h ]; then
-  sudo apt-get update -qq
-  sudo apt-get install -y -qq libgmp-dev pari-gp python3-gmpy2 tmux
+PYTHON=${PYTHON:-python3}
+if [ -x .venv/bin/python ] && [ "$PYTHON" = python3 ]; then PYTHON=.venv/bin/python; fi
+case $(uname -s) in
+  Darwin)
+    command -v brew >/dev/null || { echo "Install Homebrew first." >&2; exit 1; }
+    for package in gmp pari; do
+      brew list --versions "$package" >/dev/null 2>&1 || brew install "$package"
+    done
+    ;;
+  Linux)
+    if ! command -v gp >/dev/null ||
+       ! printf '#include <gmp.h>\n' | "${CC:-cc}" -E - >/dev/null 2>&1 ||
+       ! "$PYTHON" -c 'import ensurepip, venv' >/dev/null 2>&1; then
+      command -v apt-get >/dev/null || { echo "Install GMP headers, PARI/GP, and a C compiler." >&2; exit 1; }
+      privilege=()
+      if [ "$(id -u)" != 0 ]; then privilege=(sudo); fi
+      "${privilege[@]}" apt-get update -qq
+      "${privilege[@]}" apt-get install -y build-essential libgmp-dev pari-gp python3-venv python3-pip
+    fi
+    ;;
+esac
+command -v gp >/dev/null || { echo "PARI/GP (gp) is required." >&2; exit 1; }
+if ! "$PYTHON" -c 'import gmpy2, sympy' >/dev/null 2>&1; then
+  "$PYTHON" -m venv .venv
+  PYTHON=.venv/bin/python
+  "$PYTHON" -m pip install -r requirements.txt
 fi
-command -v gp >/dev/null 2>&1 || sudo apt-get install -y -qq pari-gp || true
-python3 -c "import gmpy2" 2>/dev/null || sudo apt-get install -y -qq python3-gmpy2 || true
-mkdir -p bin
-gcc -O3 -march=native -Wall -o bin/search src/search.c -lgmp -lm
-gcc -O2 -Wall -o bin/cover src/cover.c -lm
-echo "build ok: $(nproc) cores"
-# smoke test: reproduce the 2004 record CPAP-9
-out=$(./bin/search -P 179 -X 149,157 -x 87103490338886343449123705322656962705040008760706629856986802283 \
-  -k 3416716300000 -K 3416716400000)
-if echo "$out" | grep -q "HIT CPAP-9 k=3416716311814"; then echo "smoke test ok"; else echo "SMOKE TEST FAILED"; echo "$out"; exit 1; fi
+scripts/build.sh
+out=$(./bin/search -P 103 -x 19506961754250869267574127632655931757917 -k 20963747 -K 20963750)
+if ! [[ "$out" == *"HIT CPAP-9 k=20963748 "* ]]; then
+  echo "$out" >&2
+  echo "Search smoke test failed." >&2
+  exit 1
+fi
+"$PYTHON" scripts/verify.py 502811815791820948505989265164219187224962352997 9
+echo "Setup complete."
